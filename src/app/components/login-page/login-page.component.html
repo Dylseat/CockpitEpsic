@@ -1,0 +1,24 @@
+<app-header-Login></app-header-Login>
+<h1 class="cockpit-title">Cockpit EPSIC</h1>
+<div class="container">
+  <form class="log-form">
+    <mat-form-field class="Email">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput [formControl]="emailFormControl" placeholder="Ex. pat@example.com">
+      <mat-error *ngIf="emailFormControl.hasError('email') && emailFormControl.touched">
+        Entrez une adresse mail valide.
+      </mat-error>
+      <mat-error *ngIf="emailFormControl.hasError('required') && emailFormControl.touched">
+        Email is <strong>required</strong>.
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="Password">
+      <mat-label>Mot de passe</mat-label>
+      <input type="password" matInput [formControl]="passwordFormControl" placeholder="Ex. 1234">
+      <mat-error *ngIf="passwordFormControl.hasError('required') && passwordFormControl.touched">
+        Password is <strong>required</strong>.
+      </mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="LogBouton" (click)="onLogin()">Login</button>
+  </form>
+</div>

@@ -1,17 +1,20 @@
-header {
-    box-sizing: border-box;
-    display: flex;
+.Header1 
+{
+    display: fixed;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
+    z-index: 1000; 
+    display: flex;
     height: 146px;
     padding: 0 78px 0 75px;
-    flex-shrink: 0;
-    background: #00B3BF;
-    box-shadow: 0px 4px 4px 3.0px rgba(0, 0, 0, 0.25);
-  }
+    align-items: center;
+    background: #00B3BF !important;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) !important;
+}
 
-.logo-Epsic{
+
+.logo-Epsic
+{
     display: flex;
     width: 234px;
     height: 74px;
@@ -21,14 +24,16 @@ header {
 
 ::ng-deep .header-buttons
 {
-    display: flex;
-    width: 140px;
+    display: table-cell;
+    flex-direction: row;
+    width: 160px;
     height: 40px;
     margin-right: 23px;
     white-space: nowrap;
     flex-shrink: 0;
-    border-radius: 100px;
-    background: var(--Bleu-Epsic, #0D426E);
+    border-radius: 80px !important;
+    background: var(--Bleu-Epsic, #0D426E) !important;
+    color: yellowgreen !important;
 }
 
 //n'ajoute pas de margin-right au dernier bouton
@@ -36,4 +41,3 @@ header {
 {
     margin-right: 0;
 }
-
