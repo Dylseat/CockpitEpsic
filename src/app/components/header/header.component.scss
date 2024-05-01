@@ -22,13 +22,12 @@
     margin-left: 20px;
 }
 
-::ng-deep .header-buttons
-{
-    display: table-cell;
+::ng-deep .header-buttons{
+    display: inline-flex;  
     flex-direction: row;
     width: 160px;
     height: 40px;
-    margin-right: 23px;
+    margin-right: 20px; 
     white-space: nowrap;
     flex-shrink: 0;
     border-radius: 80px !important;
@@ -36,8 +35,3 @@
     color: yellowgreen !important;
 }
 
-//n'ajoute pas de margin-right au dernier bouton
-::ng-deep .header-buttons button:last-child 
-{
-    margin-right: 0;
-}
