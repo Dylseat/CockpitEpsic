@@ -2,18 +2,18 @@
 <mat-dialog-content>
   <mat-form-field appearance="fill">
     <mat-label>Numéro de module</mat-label>
-    <input matInput [(ngModel)]="data.moduleNumber">
+    <input matInput [(ngModel)]="dataModule.moduleNumber">
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Titre du module</mat-label>
-    <input matInput [(ngModel)]="data.moduleTitle">
+    <input matInput [(ngModel)]="dataModule.moduleTitle">
   </mat-form-field>
   <mat-form-field appearance="fill">
     <mat-label>Note du module</mat-label>
-    <input matInput [(ngModel)]="data.moduleNote">
+    <input matInput [(ngModel)]="dataModule.moduleNote">
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions align="end">
-  <button mat-button (click)="onNoClick()">Annuler</button>
+  <button mat-button (click)="CloseDialog()">Annuler</button>
   <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Ajouter</button>
 </mat-dialog-actions>

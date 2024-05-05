@@ -1,22 +1,29 @@
-import { Component } from '@angular/core';
-import { MatDialogRef, MatDialogActions } from '@angular/material/dialog';
-import { MatDialogModule } from '@angular/material/dialog';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-dialog',
   standalone: true,
-  imports: [MatFormFieldModule, FormsModule, MatDialogActions, MatDialogModule],
+  imports: [MatFormFieldModule, FormsModule, MatDialogModule, MatInputModule],
   templateUrl: './dialog.component.html',
   styleUrls: ['./dialog.component.scss']
 })
-export class DialogComponent {
-  data = {moduleNumber: '', moduleTitle: '', moduleNote: ''};
+export class DialogComponent implements OnInit{
+  dataModule = {moduleNumber: '', moduleTitle: '', moduleNote: ''};
 
-  constructor(public dialogRef: MatDialogRef<DialogComponent>) {}
+  constructor(@Inject(MAT_DIALOG_DATA) public data:any ,private dialogRef: MatDialogRef<DialogComponent>) {}
 
-  onNoClick(): void {
+  ngOnInit(): void {
+    if (this.data)
+      {
+        this.dataModule = this.data;
+      }
+  }
+
+  CloseDialog(): void {
     this.dialogRef.close();
   }
 }
