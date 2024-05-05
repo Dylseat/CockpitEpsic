@@ -1,19 +1,20 @@
+<h3>Notes des branches principales</h3>
+<p>Inscrivez vos notes dans les cases du tableau. Votre moyenne s’affiche automatiquement dans la 4ème colonne !</p>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Colonne Branche -->
+  <ng-container matColumnDef="branche">
+    <th mat-header-cell *matHeaderCellDef> Branche </th>
+    <td mat-cell *matCellDef="let element"> {{element.branche}} </td>
+  </ng-container>
 
-    <!-- Colonne Branche -->
-    <ng-container matColumnDef="branche">
-      <th mat-header-cell *matHeaderCellDef> Branche </th>
-      <td mat-cell *matCellDef="let element"> {{element.branche}} </td>
-    </ng-container>
-  
-<!-- Générez des colonnes pour chaque note dans le semestre 1 -->
-<ng-container *ngFor="let idx of [0, 1, 2]" [matColumnDef]="'semestre1-note' + idx">
+  <!-- Générez des colonnes pour chaque note dans le semestre 1 -->
+  <ng-container *ngFor="let idx of [0, 1, 2]" [matColumnDef]="'semestre1-note' + idx">
     <th mat-header-cell *matHeaderCellDef> Semestre 1 Note {{ idx + 1 }} </th>
     <td mat-cell *matCellDef="let element">
       <input [(ngModel)]="element.notesSemestre1[idx]" (ngModelChange)="calculateSemesterAverage(element, 1)" type="number">
     </td>
   </ng-container>
-  
+
   <!-- Générez des colonnes pour chaque note dans le semestre 2 -->
   <ng-container *ngFor="let idx of [0, 1, 2]" [matColumnDef]="'semestre2-note' + idx">
     <th mat-header-cell *matHeaderCellDef> Semestre 2 Note {{ idx + 1 }} </th>
@@ -21,23 +22,24 @@
       <input [(ngModel)]="element.notesSemestre2[idx]" (ngModelChange)="calculateSemesterAverage(element, 2)" type="number">
     </td>
   </ng-container>
-  
-    <!-- Colonnes pour les moyennes -->
-    <ng-container matColumnDef="moyenneSemestre1">
-      <th mat-header-cell *matHeaderCellDef> Moyenne S1 </th>
-      <td mat-cell *matCellDef="let element"> {{element.moyenneSemestre1 | number:'1.0-2'}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="moyenneSemestre2">
-      <th mat-header-cell *matHeaderCellDef> Moyenne S2 </th>
-      <td mat-cell *matCellDef="let element"> {{element.moyenneSemestre2 | number:'1.0-2'}} </td>
-    </ng-container>
-  
-    <ng-container matColumnDef="moyenneAnnuelle">
-      <th mat-header-cell *matHeaderCellDef> Moyenne Annuelle </th>
-      <td mat-cell *matCellDef="let element"> {{element.moyenneAnnuelle | number:'1.0-2'}} </td>
-    </ng-container>
-  
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
+
+  <!-- Colonnes pour les moyennes -->
+  <ng-container matColumnDef="moyenneSemestre1">
+    <th mat-header-cell *matHeaderCellDef> Moyenne S1 </th>
+    <td mat-cell *matCellDef="let element"> {{element.moyenneSemestre1 | number:'1.0-2'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="moyenneSemestre2">
+    <th mat-header-cell *matHeaderCellDef> Moyenne S2 </th>
+    <td mat-cell *matCellDef="let element"> {{element.moyenneSemestre2 | number:'1.0-2'}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="moyenneAnnuelle">
+    <th mat-header-cell *matHeaderCellDef> Moyenne Annuelle </th>
+    <td mat-cell *matCellDef="let element"> {{element.moyenneAnnuelle | number:'1.0-2'}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+

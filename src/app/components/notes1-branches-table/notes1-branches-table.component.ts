@@ -43,13 +43,20 @@ export class Notes1BranchesTableComponent {
     const sem2 = grade.moyenneSemestre2;
 
     // Assurez-vous que ni sem1 ni sem2 ne sont null ou undefined avant de calculer
-    if (sem1 != null && sem2 != null) {
+    if (sem1 != null && sem2 != null) 
+    {
       grade.moyenneAnnuelle = (sem1 + sem2) / 2;
-    } else if (sem1 != null) {
+    } 
+    else if (sem1 != null) 
+    {
       grade.moyenneAnnuelle = sem1; // Utilisez sem1 si sem2 est null ou undefined
-    } else if (sem2 != null) {
+    } 
+    else if (sem2 != null) 
+    {
       grade.moyenneAnnuelle = sem2; // Utilisez sem2 si sem1 est null ou undefined
-    } else {
+    } 
+    else 
+    {
       grade.moyenneAnnuelle = null; // Mettez à null si les deux sont null ou undefined
     }
   }
@@ -60,22 +67,30 @@ export class Notes1BranchesTableComponent {
     const validNotes = notes.filter(note => note !== null && typeof note === 'number') as number[];
 
     // S'assurer qu'il n'y a pas de valeurs null avant de calculer la moyenne
-    if (validNotes.length > 0) {
+    if (validNotes.length > 0) 
+    {
       const total = validNotes.reduce((a, b) => a + b, 0);
       const average = total / validNotes.length;
-      if (semester === 1) {
+      if (semester === 1) 
+      {
         grade.moyenneSemestre1 = average;
-      } else {
+      }
+      else 
+      {
         grade.moyenneSemestre2 = average;
       }
-    } else {
-      if (semester === 1) {
+    } 
+    else 
+    {
+      if (semester === 1) 
+      {
         grade.moyenneSemestre1 = null;
-      } else {
+      } 
+      else 
+      {
         grade.moyenneSemestre2 = null;
       }
     }
-
     this.calculateAnnualAverage(grade);
   }
 }
