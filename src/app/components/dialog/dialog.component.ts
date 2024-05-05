@@ -1,17 +1,20 @@
 import { Component } from '@angular/core';
-import { MatDialog, MatDialogRef, MatDialogActions } from '@angular/material/dialog';
+import { MatDialogRef, MatDialogActions } from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-dialog',
   standalone: true,
-  imports: [],
+  imports: [MatFormFieldModule, FormsModule, MatDialogActions, MatDialogModule],
   templateUrl: './dialog.component.html',
-  styleUrl: './dialog.component.scss'
+  styleUrls: ['./dialog.component.scss']
 })
 export class DialogComponent {
   data = {moduleNumber: '', moduleTitle: '', moduleNote: ''};
 
-  constructor(public dialogRef: MatDialogRef<DialogComponent>, public dialog: MatDialog, public action: MatDialogActions) { }
+  constructor(public dialogRef: MatDialogRef<DialogComponent>) {}
 
   onNoClick(): void {
     this.dialogRef.close();

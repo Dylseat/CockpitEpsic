@@ -1,12 +1,33 @@
 import { Component, Inject, ChangeDetectorRef } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
-import { MatDialog } from '@angular/material/dialog';
+import {   
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+  MatDialogTitle,
+  MatDialogContent,
+  MatDialogActions,
+  MatDialogClose, } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
+import {MatButtonModule} from '@angular/material/button';
+import {FormsModule} from '@angular/forms';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @Component({
   selector: 'app-notes1-modules-table',
   standalone: true,
-  imports: [MatTableModule, DialogComponent],
+  imports: [
+    MatTableModule, 
+    DialogComponent,
+    MatFormFieldModule,
+    MatInputModule,
+    FormsModule,
+    MatButtonModule,
+    MatDialogTitle,
+    MatDialogContent,
+    MatDialogActions,
+    MatDialogClose,],
   templateUrl: './notes1-modules-table.component.html',
   styleUrl: './notes1-modules-table.component.scss'
 })

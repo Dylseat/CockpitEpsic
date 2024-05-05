@@ -70,7 +70,7 @@ export class Notes1BranchesTableComponent {
     if (validNotes.length > 0) 
     {
       const total = validNotes.reduce((a, b) => a + b, 0);
-      const average = total / validNotes.length;
+      const average = Math.round((total / validNotes.length) * 2) / 2;
       if (semester === 1) 
       {
         grade.moyenneSemestre1 = average;
