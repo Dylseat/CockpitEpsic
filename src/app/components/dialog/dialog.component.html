@@ -1,18 +1,19 @@
 <h2 mat-dialog-title>Ajouter une ligne</h2>
-
-<mat-form-field>
-    <mat-label>Numéro de module</mat-label>
-    <input matInput [(ngModel)]="data.moduleNumber">
-</mat-form-field>
-<mat-form-field>
-    <mat-label>Titre du module</mat-label>
-    <input matInput [(ngModel)]="data.moduleTitle">
-</mat-form-field>
-<mat-form-field>
-    <mat-label>Note du module</mat-label>
-    <input matInput [(ngModel)]="data.moduleNote">
-</mat-form-field>
+<mat-dialog-content>
+    <mat-form-field>
+        <mat-label>Numéro de module</mat-label>
+        <input matInput [(ngModel)]="data.moduleNumber">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Titre du module</mat-label>
+        <input matInput [(ngModel)]="data.moduleTitle">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Note du module</mat-label>
+        <input matInput [(ngModel)]="data.moduleNote">
+    </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
-<button mat-button (click)="onNoClick()">Annuler</button>
-<button mat-button [mat-dialog-close]="data">Ajouter</button>
+    <button mat-button (click)="onNoClick()">Annuler</button>
+    <button mat-button [mat-dialog-close]="data">Ajouter</button>
+</mat-dialog-actions>
