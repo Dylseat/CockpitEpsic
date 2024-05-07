@@ -1,0 +1,9 @@
+<mat-toolbar class="Header1" color="primary">
+    <img class="Logo-Epsic" src="assets/logo-EPSIC-bleu.png" alt="EPSIC" />
+    <a><mat-icon (click)="navigateLogin()" class="LogoOutIcon" aria-hidden="false" aria-label="Example home icon" fontIcon="logout"></mat-icon></a>
+    <nav>
+        <a (click)="navigateHome()" class="header-buttons" mat-flat-button routerLink="/home" routerLinkActive="active">Accueil</a>
+        <a (click)="navigateHoraire()" class="header-buttons" mat-flat-button routerLink="" routerLinkActive="active">Mon horaire</a>
+        <a (click)="navigateNote()" class="header-buttons" mat-flat-button>Notes et moyennes</a>
+    </nav>
+</mat-toolbar>
