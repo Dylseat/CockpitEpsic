@@ -27,6 +27,30 @@ export class PageHoraireComponent {
     });
   }
 
+  print() {
+    const imageUrl = this.horaireImage.nativeElement.src;
+    const printWindow = window.open('about:blank', '', 'height=600,width=800');
+    if (printWindow !== null) {
+        printWindow.document.write('<html><head><title>Impression</title></head><body>');
+        printWindow.document.write(`<img src="${imageUrl}" alt="Horaire">`);
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+
+        printWindow.addEventListener('load', () => {
+          setTimeout(() => {
+              printWindow.print();
+              setTimeout(() => {
+                  printWindow.close();
+              }, 100);
+          }, 100); 
+      });
+
+        
+
+    } else {
+        console.error('La fenêtre d\'impression n\'a pas pu être ouverte.');
+    }
+}
 
 
 }
