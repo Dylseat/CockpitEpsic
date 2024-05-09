@@ -25,7 +25,7 @@ export class Notes1ModulesTableComponent {
     dialogRef.afterClosed().subscribe(result => {
       if (result) 
       {
-        console.log('wesh', result);
+        console.log('données reçu', result);
         this.dataSource.push(result);
         this.dataSource = [...this.dataSource];
       }
