@@ -3,18 +3,20 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @Component({
   selector: 'app-notes1-modules-table',
   standalone: true,
-  imports: [MatTableModule, MatButtonModule],
+  imports: [MatTableModule, MatButtonModule, MatIconModule],
   templateUrl: './notes1-modules-table.component.html',
   styleUrl: './notes1-modules-table.component.scss'
 })
 export class Notes1ModulesTableComponent {
   constructor(public dialog: MatDialog) { }
 
-  displayedColumns: string[] = ['moduleNumber', 'moduleTitle', 'moduleNote'];
+  displayedColumns: string[] = ['moduleNumber', 'moduleTitle', 'moduleNote', 'delete'];
   dataSource: { moduleNumber: ''; moduleTitle: ''; moduleNote: ''; }[] = [];
 
   openDialog(): void {
@@ -23,7 +25,8 @@ export class Notes1ModulesTableComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
+      if (result) 
+      {
         this.dataSource.push(result);
         this.dataSource = [...this.dataSource];
       }
@@ -34,7 +37,7 @@ export class Notes1ModulesTableComponent {
     const index = this.dataSource.indexOf(element);
     if (index >= 0) {
       this.dataSource.splice(index, 1);
+      this.dataSource = [...this.dataSource];
     }
   }
 }
-

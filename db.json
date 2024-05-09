@@ -3,13 +3,31 @@
     { "id":"1", "number":"117", "title": "Mettre en place l’infrastructure informatique d’une petite entreprise"},
     { "id":"2", "number":"122", "title": "Automatiser des procédures à l’aide de scripts."},
     { "id":"3", "number":"123", "title": "Mettre en oeuvre les services d’un serveur"},
-    { "id":"4", "number":"162", "title":"Analyser et modéliser des données - OM"},
-    { "id":"5", "number":"162", "title":"Analyser et modéliser des données - JL"},
-    { "id":"6", "number":"164", "title":"Créer des bases de données et y insérer des données - OM"},
-    { "id":"7", "number":"164", "title":"Créer des bases de données et y insérer des données - JL"},
-    { "id":"8", "number":"231", "title":"Appliquer la protection et la sécurité des données"},
-    { "id":"9", "number":"293", "title":"Créer et publier un site Web"},
-    { "id":"10", "number":"319", "title":"Concevoir et implémenter des applications"},
-    { "id":"11", "number":"431", "title":"Exécuter des mandats de manière autonome dans un environnement informatique"}
+    { "id":"4", "number":"162", "title": "Analyser et modéliser des données - OM"},
+    { "id":"5", "number":"162", "title": "Analyser et modéliser des données - JL"},
+    { "id":"6", "number":"164", "title": "Créer des bases de données et y insérer des données - OM"},
+    { "id":"7", "number":"164", "title": "Créer des bases de données et y insérer des données - JL"},
+    { "id":"8", "number":"231", "title": "Appliquer la protection et la sécurité des données"},
+    { "id":"9", "number":"293", "title": "Créer et publier un site Web"},
+    { "id":"10", "number":"319", "title": "Concevoir et implémenter des applications"},
+    { "id":"11", "number":"431", "title": "Exécuter des mandats de manière autonome dans un environnement informatique"}
+  ],
+
+  "module2annees": [
+    { "id":"1", "number":"114", "title": "Mettre en œuvre des systèmes de codification, de compression et d'encryptage"},
+    { "id":"2", "number":"254", "title": "Décrire les processus métier dans votre propre environnement professionnel"},
+    { "id":"3", "number":"346", "title": "Concevoir et réaliser des solutions cloud"},
+    { "id":"4", "number":"165", "title": "Utiliser des bases de données NoSQL"},
+    { "id":"5", "number":"320", "title": "Programmation orientée objet"},
+    { "id":"6", "number":"322", "title": "Concevoir et implémenter des interfaces utilisateur"},
+    { "id":"7", "number":"347", "title": "Utiliser un service avec des conteneurs"},
+    { "id":"8", "number":"426", "title": "Développer un logiciel avec des méthodes agiles"}
+  ],
+  "module3annees": [
+
+  ],
+
+  "module4annees": [
+
   ]
 }
