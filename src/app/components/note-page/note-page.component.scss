@@ -1,35 +1,26 @@
-.cockpit-title 
-{
-  margin-top: 52px; 
-  margin-left: 50px; 
-  padding-left: 20px;
-  color: #0D426E;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
+.cockpit-title {
+	margin-top: 52px; 
+	margin-left: 50px; 
+	padding-left: 20px;
+	color: #0D426E;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
 }
 
-p
-{    
-  margin-top: 52px; 
-  margin-left: 50px; 
-  padding-left: 20px;
-  color: #004170;
-  font-size: 20px;
+p {
+	margin-top: 52px; 
+	margin-left: 50px; 
+	padding-left: 20px;
+	color: #004170;
+	font-size: 20px;
 }
 
-.tabs 
-{
-  display: block;
-  width: 80%;
-  margin: 20px auto; 
-  border: 1px solid rgba(0, 0, 0, 0.20);
-  background: #FEFBFB;
-}
-
-.mat-tab-label-active 
-{
-  background: #B3E5FC;
-  color: #0D426E;
+.tabs {
+	display: block;
+	width: 80%;
+	margin: 20px auto;
+	// border: 1px solid rgba(0, 0, 0, 0.20);
+	// background-color: #e0e0e0;
 }
