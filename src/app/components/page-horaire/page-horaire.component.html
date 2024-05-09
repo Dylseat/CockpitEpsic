@@ -2,14 +2,14 @@
     <app-header></app-header>
 
     <div class="content">
-        <img src="../../assets/horaire_epsic_cockpit.png" alt="horaire">
+        <img #horaireImage src="../../assets/horaire_epsic_cockpit.png" alt="horaire">
         <div class="actions">
-            <div class="download">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="download" ></mat-icon>
+            <div class="download" style="cursor: pointer;" (click)="download()" >
+                <mat-icon aria-hidden="false" fontIcon="download" ></mat-icon>
                 <div class="text">Télécharger</div>
             </div>
-            <div class="print">
-                <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="print"></mat-icon>
+            <div class="print" style="cursor: pointer;">
+                <mat-icon aria-hidden="false" fontIcon="print"></mat-icon>
                 <div class="text">Imprimer</div>
             </div>
         </div>
