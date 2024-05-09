@@ -3,18 +3,20 @@ import { MatTableModule } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 
 @Component({
   selector: 'app-notes1-modules-table',
   standalone: true,
-  imports: [MatTableModule, MatButtonModule],
+  imports: [MatTableModule, MatButtonModule, MatIconModule],
   templateUrl: './notes1-modules-table.component.html',
   styleUrl: './notes1-modules-table.component.scss'
 })
 export class Notes1ModulesTableComponent {
   constructor(public dialog: MatDialog) { }
 
-  displayedColumns: string[] = ['moduleNumber', 'moduleTitle', 'moduleNote'];
+  displayedColumns: string[] = ['moduleNumber', 'moduleTitle', 'moduleNote', 'delete'];
   dataSource: { moduleNumber: ''; moduleTitle: ''; moduleNote: ''; }[] = [];
 
   openDialog(): void {
