@@ -27,7 +27,6 @@ export class Notes1ModulesTableComponent {
     dialogRef.afterClosed().subscribe(result => {
       if (result) 
       {
-        console.log('données reçu', result);
         this.dataSource.push(result);
         this.dataSource = [...this.dataSource];
       }
@@ -38,7 +37,7 @@ export class Notes1ModulesTableComponent {
     const index = this.dataSource.indexOf(element);
     if (index >= 0) {
       this.dataSource.splice(index, 1);
+      this.dataSource = [...this.dataSource];
     }
   }
 }
-
