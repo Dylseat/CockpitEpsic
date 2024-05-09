@@ -23,7 +23,9 @@ export class Notes1ModulesTableComponent {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if (result) {
+      if (result) 
+      {
+        console.log('wesh', result);
         this.dataSource.push(result);
         this.dataSource = [...this.dataSource];
       }

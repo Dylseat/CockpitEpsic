@@ -13,7 +13,7 @@
     { "id":"11", "number":"431", "title": "Exécuter des mandats de manière autonome dans un environnement informatique"}
   ],
 
-  "module2annes": [
+  "module2annees": [
     { "id":"1", "number":"114", "title": "Mettre en œuvre des systèmes de codification, de compression et d'encryptage"},
     { "id":"2", "number":"254", "title": "Décrire les processus métier dans votre propre environnement professionnel"},
     { "id":"3", "number":"346", "title": "Concevoir et réaliser des solutions cloud"},
@@ -23,11 +23,11 @@
     { "id":"7", "number":"347", "title": "Utiliser un service avec des conteneurs"},
     { "id":"8", "number":"426", "title": "Développer un logiciel avec des méthodes agiles"}
   ],
-  "module3annes": [
+  "module3annees": [
 
   ],
 
-  "module4annes": [
+  "module4annees": [
 
   ]
 }
