@@ -19,6 +19,10 @@ export class ModuleService {
     return this.http.get<Module[]>(`${this.apiUrl}/module1annees`);
   }
 
+  getModulesCie1annes(): Observable<Module[]> {
+    return this.http.get<Module[]>(`${this.apiUrl}/moduleCie1annees`);
+  }
+
   getModules2annes(): Observable<Module[]> {
     return this.http.get<Module[]>(`${this.apiUrl}/module2annees`);
   }
