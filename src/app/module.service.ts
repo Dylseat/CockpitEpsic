@@ -19,12 +19,24 @@ export class ModuleService {
     return this.http.get<Module[]>(`${this.apiUrl}/module1annees`);
   }
 
+  getModulesCie1annes(): Observable<Module[]> {
+    return this.http.get<Module[]>(`${this.apiUrl}/moduleCie1annees`);
+  }
+
+  getModulesCie2annes(): Observable<Module[]> {
+    return this.http.get<Module[]>(`${this.apiUrl}/moduleCie2annees`);
+  }
+
   getModules2annes(): Observable<Module[]> {
     return this.http.get<Module[]>(`${this.apiUrl}/module2annees`);
   }
 
   getModules3annes(): Observable<Module[]> {
     return this.http.get<Module[]>(`${this.apiUrl}/module3annees`);
+  }
+
+  getModulesCie3annes(): Observable<Module[]> {
+    return this.http.get<Module[]>(`${this.apiUrl}/moduleCie3annees`);
   }
 
   getModules4annes(): Observable<Module[]> {

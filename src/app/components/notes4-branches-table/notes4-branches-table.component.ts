@@ -3,7 +3,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { BranchesDataService } from '../.././branches-data.service';
+import { BranchesData4Service } from '../.././branches-data4.service';
 
 export interface Grade {
 	branche: string;
@@ -15,14 +15,14 @@ export interface Grade {
 }
 
 @Component({
-	selector: 'app-notes1-branches-table',
+	selector: 'app-notes4-branches-table',
 	standalone: true,
 	imports: [MatTableModule, MatInputModule, FormsModule, CommonModule],
-	templateUrl: './notes1-branches-table.component.html',
-	styleUrls: ['./notes1-branches-table.component.scss']
+	templateUrl: './notes4-branches-table.component.html',
+	styleUrls: ['./notes4-branches-table.component.scss']
 })
 
-export class Notes1BranchesTableComponent {
+export class Notes4BranchesTableComponent {
 	displayedColumns: string[] = [
 		'branche',
 		...Array.from({length: 3}, (_, i) => `semestre1-note${i}`),
@@ -32,11 +32,10 @@ export class Notes1BranchesTableComponent {
 		'moyenneAnnuelle'
 	];
 	
-	constructor(private branchesDataService: BranchesDataService) {}
+	constructor(private branchesData2Service: BranchesData4Service) {}
 
 	dataSource: Grade[] = [
 		{ branche: 'Anglais', notesSemestre1: [null, null, null], notesSemestre2: [null, null, null] },
-		{ branche: 'Math', notesSemestre1: [null, null, null], notesSemestre2: [null, null, null] },
 		{ branche: 'ECG', notesSemestre1: [null, null, null], notesSemestre2: [null, null, null] }
 	];
 
@@ -65,7 +64,7 @@ export class Notes1BranchesTableComponent {
 
 	private updateAnnualAverages() {
 		const averages = this.dataSource.map(grade => grade.moyenneAnnuelle).filter(moy => moy !== null) as number[];
-		this.branchesDataService.updateAnnualAverages(averages);
+		this.branchesData2Service.updateAnnualAverages(averages);
 	  }
 
 	calculateSemesterAverage(grade: Grade, semester: number) {

@@ -1,26 +1,26 @@
 import { Component } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
+import { Dialog2Component } from '../dialog2/dialog2.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { ModuleDataService } from '../.././module-data.service'
+import { ModuleData2Service } from '../.././module-data2.service'
 
 
 @Component({
-  selector: 'app-notes1-modules-table',
+  selector: 'app-notes2-modules-table',
   standalone: true,
   imports: [MatTableModule, MatButtonModule, MatIconModule],
-  templateUrl: './notes1-modules-table.component.html',
-  styleUrl: './notes1-modules-table.component.scss'
+  templateUrl: './notes2-modules-table.component.html',
+  styleUrl: './notes2-modules-table.component.scss'
 })
-export class Notes1ModulesTableComponent {
-  constructor(public dialog: MatDialog, private moduleDataService: ModuleDataService) {}
+export class Notes2ModulesTableComponent {
+  constructor(public dialog: MatDialog, private moduleData2Service: ModuleData2Service) {}
   displayedColumns: string[] = ['moduleNumber', 'moduleTitle', 'moduleNote', 'delete'];
   dataSource: { moduleNumber: ''; moduleTitle: ''; moduleNote: ''; }[] = [];
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(DialogComponent, {
+    const dialogRef = this.dialog.open(Dialog2Component, {
       data: { moduleNumber: '', moduleTitle: '', moduleNote: '' }
     });
 
@@ -47,7 +47,7 @@ export class Notes1ModulesTableComponent {
   private updateModuleNotes(): void {
     // Convertir chaque moduleNote en nombre avant de passer au service
     const notes = this.dataSource.map(module => Number(module.moduleNote));
-    this.moduleDataService.updateModuleNotes(notes);
+    this.moduleData2Service.updateModuleNotes(notes);
   }
 
 }

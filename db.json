@@ -13,6 +13,12 @@
     { "id":"11", "number":"431", "title": "Exécuter des mandats de manière autonome dans un environnement informatique"}
   ],
 
+  "moduleCie1annees": [
+    { "id":"1", "number":"187", "title": "Mettre en service un poste de travail ICT avec le système d'exploitation"},
+    { "id":"2", "number":"110", "title": "Analyser et représenter des données avec des outils"},
+    { "id":"3", "number":"106", "title": "Interroger, traiter et assurer la maintenance des bases de données"}
+  ],
+
   "module2annees": [
     { "id":"1", "number":"114", "title": "Mettre en œuvre des systèmes de codification, de compression et d'encryptage"},
     { "id":"2", "number":"254", "title": "Décrire les processus métier dans votre propre environnement professionnel"},
@@ -23,11 +29,31 @@
     { "id":"7", "number":"347", "title": "Utiliser un service avec des conteneurs"},
     { "id":"8", "number":"426", "title": "Développer un logiciel avec des méthodes agiles"}
   ],
-  "module3annees": [
 
+  "moduleCie2annees": [
+    { "id":"1", "number":"259", "title": "Développer des solutions ICT avec la Machine Learning"},
+    { "id":"2", "number":"294", "title": "Réaliser le front-end d'une application Web Interactive"},
+    { "id":"3", "number":"295", "title": "Réaliser le Back-end pour des applications"}
+  ],
+
+  "module3annees": [
+    { "id":"1", "number":"323", "title": "Programmer de manière fonctionnelle"},
+    { "id":"2", "number":"450", "title": "Tester des applications"},
+    { "id":"3", "number":"183", "title": "Implémenter la sécurité d’une application"},
+    { "id":"4", "number":"306", "title": "Réaliser de petits projets dans son propre environnement professionnel"}
+  ],
+ 
+  "moduleCie3annees": [
+    { "id":"1", "number":"335", "title": "Réaliser une application pour mobile"},
+    { "id":"2", "number":"223", "title": "Réaliser des applications multiutilisateurs orientées objets"},
+    { "id":"3", "number":"217", "title": "Concevoir, planifier et mettre en place un service pour l’IoE"},
+    { "id":"4", "number":"185", "title": "Analyser et implémenter des mesures visant à assurer la sécurité informatique des PME"}
   ],
 
   "module4annees": [
-
+    { "id":"1", "number":"321", "title": "Programmer des systèmes distribués"},
+    { "id":"2", "number":"324", "title": "Prendre en charge des processus DevOps avec des outils logiciels"},
+    { "id":"3", "number":"241", "title": "Initialiser des solutions ICT innovantes"},
+    { "id":"4", "number":"245", "title": "Mettre en oeuvre des solutions ICT innovantes"}
   ]
 }

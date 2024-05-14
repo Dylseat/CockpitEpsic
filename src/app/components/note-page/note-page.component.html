@@ -1,12 +1,33 @@
 <app-header></app-header>
 <h1 class="cockpit-title">Cockpit EPSIC</h1>
 <p>Choisissez votre année de formation. Remplissez les différentes section et découvrez vos moyennes !</p>
+<br>
 <mat-tab-group class="tabs">
 	<mat-tab label="1ère année">
-		<app-notes1-branches-table></app-notes1-branches-table>
-		<app-notes1-modules-table></app-notes1-modules-table>
+		<br><br>
+		<app-notes1-branches-table></app-notes1-branches-table><br>
+		<app-notes1-modules-table></app-notes1-modules-table><br><br>
+		<app-notes1-cie-table></app-notes1-cie-table><br><br>
+		<app-notes1-average-table></app-notes1-average-table><br><br>
 	</mat-tab>
-	<mat-tab label="2ème année"></mat-tab>
-	<mat-tab label="3ème année"></mat-tab>
-	<mat-tab label="4ème année"></mat-tab>
+	<mat-tab label="2ème année">
+		<br><br>
+		<app-notes2-branches-table></app-notes2-branches-table><br>
+		<app-notes2-modules-table></app-notes2-modules-table><br><br>
+		<app-notes2-cie-table></app-notes2-cie-table><br><br>
+		<app-notes2-average-table></app-notes2-average-table><br><br>
+	</mat-tab>
+	<mat-tab label="3ème année">
+		<br><br>
+		<app-notes3-branches-table></app-notes3-branches-table><br>
+		<app-notes3-modules-table></app-notes3-modules-table><br><br>
+		<app-notes3-cie-table></app-notes3-cie-table><br><br>
+		<app-notes3-average-table></app-notes3-average-table><br><br>
+	</mat-tab>
+	<mat-tab label="4ème année">
+		<br><br>
+		<app-notes4-branches-table></app-notes4-branches-table><br>
+		<app-notes4-modules-table></app-notes4-modules-table><br><br>
+		<app-notes4-average-table></app-notes4-average-table><br><br>
+	</mat-tab>
 </mat-tab-group>
