@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Ajouter une note</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Sélectionner un module</mat-label>
+    <mat-select [(ngModel)]="selectedModule">
+      <mat-option *ngFor="let module of modules" [value]="module">
+        {{ module.number }} - {{ module.title }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Note</mat-label>
+    <textarea matInput [(ngModel)]="dataModule.moduleNote"></textarea>
+  </mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="CloseDialog()">Annuler</button>
+  <button mat-button (click)="onSave()">Enregistrer</button>
+</mat-dialog-actions>

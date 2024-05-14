@@ -1,0 +1,44 @@
+<h3>Notes des modules CIE</h3>
+<p>Cliquez sur "Ajouter une ligne" pour ajouter un module, sélectionnez le module et la note que vous avez obtenu. Vous pouvez supprimer une entrée grâce à la poubelle.</p>
+<br>
+
+<button mat-button (click)="openDialog()">Ajouter une ligne</button>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!-- N° Module Column -->
+    <ng-container matColumnDef="moduleNumber">
+        <th mat-header-cell *matHeaderCellDef> N° Module </th>
+        <td mat-cell *matCellDef="let element"> {{element.moduleNumber}} </td>
+    </ng-container>
+
+    <!-- Module Title Column -->
+    <ng-container matColumnDef="moduleTitle">
+        <th mat-header-cell *matHeaderCellDef> Titre du Module </th>
+        <td mat-cell *matCellDef="let element"> {{element.moduleTitle}} </td>
+    </ng-container>
+
+    <!-- Module Note Column -->
+    <ng-container matColumnDef="moduleNote">
+        <th mat-header-cell *matHeaderCellDef> Note du Module </th>
+        <td mat-cell *matCellDef="let element"> {{element.moduleNote}} </td>
+    </ng-container>
+
+    <!-- Delete Button Column -->
+    <ng-container matColumnDef="delete">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="deleteRow(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<!-- espace avec ligne -->
+<br>
+<br>
+<hr style="color: #e0e0e0;">
+<br><br>

@@ -1,0 +1,21 @@
+<h3>Vos moyennes</h3>
+<p>Voici vos différentes moyennes annuelles.</p>
+<br>
+<table mat-table [dataSource]="averages" class="mat-elevation-z8">
+
+    <!-- Column Definitions -->
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef> Branche </th>
+      <td mat-cell *matCellDef="let element"> {{element.category}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="value">
+      <th mat-header-cell *matHeaderCellDef> Moyenne </th>
+      <td mat-cell *matCellDef="let element"> {{element.value}} </td>
+    </ng-container>
+  
+    <!-- Row Definitions -->
+    <tr mat-header-row *matHeaderRowDef="['category', 'value']"></tr>
+    <tr mat-row *matRowDef="let row; columns: ['category', 'value'];"></tr>
+  </table>
+  
