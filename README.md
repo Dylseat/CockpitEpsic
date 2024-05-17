@@ -29,19 +29,22 @@ Récupérez le projet dans le dossier .zip et ouvrez le dans un IDE.
 
 Dans le terminal de votre IDE, réalisé la commande suivante pour installer toutes les dépendances liées au projet :
 
-- npm install
+```
+ npm install
+``` 
+
 
 ### Démarrer le serveur json
 
 Pour démarrer le serveur json, il faut effectuer cette commande dans le terminal de votre IDE :
 
-- npx json-server db.json
+- `npx json-server db.json`
 
 ### Démarer l'application web
 
 Pour démarrer l'application web, il faut effectuer cette commande dans le terminal de votre IDE :
 
-- ng serve
+- `ng serve`
 
 Pour finir cliquez sur le lien du terminal (ctrl + click) ou connectez-vous a votre localhost avec le port 4200.
 
