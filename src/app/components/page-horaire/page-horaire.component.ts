@@ -47,7 +47,9 @@ export class PageHoraireComponent {
 
         
 
-    } else {
+    } 
+    else 
+    {
         console.error('La fenêtre d\'impression n\'a pas pu être ouverte.');
     }
 }

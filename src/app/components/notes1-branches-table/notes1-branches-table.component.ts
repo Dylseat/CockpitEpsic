@@ -48,7 +48,7 @@ export class Notes1BranchesTableComponent {
 		const sem2 = grade.moyenneSemestre2;
 
 		if (sem1 != null && sem2 != null) {
-			grade.moyenneAnnuelle = (sem1 + sem2) / 2;
+			grade.moyenneAnnuelle = Math.round((sem1 + sem2)) / 2;
 		} else if (sem1 != null) {
 			grade.moyenneAnnuelle = sem1;
 		} else if (sem2 != null) {

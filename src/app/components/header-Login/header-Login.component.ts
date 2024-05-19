@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   imports: [MatToolbarModule],
   standalone: true
 })
+
 export class HeaderComponent {
 }
