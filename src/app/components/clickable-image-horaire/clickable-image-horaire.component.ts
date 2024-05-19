@@ -13,6 +13,6 @@ export class ClickableImageComponentHoraire {
   constructor(private router: Router) {}
 
   navigate() {
-    this.router.navigate(['/horaire']);  // A CHANGER AVEC LA PAGE HORAIRE !!!
+    this.router.navigate(['/horaire']); 
   }
 }

@@ -44,10 +44,10 @@ export class Notes1ModulesTableComponent {
     }
   }
 
+  // Met à jour les notes dans le service en convertissant les valeurs en nombre
   private updateModuleNotes(): void {
-    // Convertir chaque moduleNote en nombre avant de passer au service
     const notes = this.dataSource.map(module => Number(module.moduleNote));
-    this.moduleDataService.updateModuleNotes(notes);
+    this.moduleDataService.updateModuleNotes(notes); // Envoie les notes mises à jour au service
   }
 
 }
