@@ -59,4 +59,4 @@ ng serve
 
 Pour finir cliquez sur le lien du terminal (ctrl + click) ou connectez-vous a votre localhost avec le port 4200.
 
-Vous pouvez maintenant utiliser l'application.
+
