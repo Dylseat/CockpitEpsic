@@ -20,6 +20,7 @@ export class Notes2CieTableComponent {
   displayedColumns: string[] = ['moduleNumber', 'moduleTitle', 'moduleNote', 'delete'];
   dataSource: { moduleNumber: ''; moduleTitle: ''; moduleNote: ''; }[] = [];
 
+  // Ouvre une boîte de dialogue pour ajouter un module
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogCie2Component, {
       data: { moduleNumber: '', moduleTitle: '', moduleNote: '' }
@@ -35,6 +36,7 @@ export class Notes2CieTableComponent {
     });
   }
 
+  // Supprime une ligne du tableau
   deleteRow(element: any): void {
     const index = this.dataSource.indexOf(element);
     if (index >= 0) {
@@ -44,6 +46,7 @@ export class Notes2CieTableComponent {
     }
   }
 
+  // Met à jour les notes dans le service en convertissant les valeurs en nombre
   private updateCieNotes(): void {
     const notes = this.dataSource.map(module => Number(module.moduleNote));
     this.cieData2Service.updateCieNotes(notes);

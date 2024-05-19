@@ -20,27 +20,50 @@ export class Notes1AverageTableComponent implements OnInit {
     { category: 'Année', value: 0 }
   ];
 
-  // Le constructeur injecte les services qui gèrent les données pour les branches, modules et modules CIE
-  constructor(private moduleDataService: ModuleDataService, private branchesDataService: BranchesDataService, private cieDataService: CieDataService) {}
+// Le constructeur injecte les services qui gèrent les données pour les branches, modules et modules CIE
+constructor(private moduleDataService: ModuleDataService, private branchesDataService: BranchesDataService, private cieDataService: CieDataService) {}
 
+  // Calcule la moyenne des notes annuelles en fonction des notes des branches, des modules et des modules inter-entreprise
   ngOnInit() {
-    // S'abonne aux changements dans les moyennes annuelles des branches
     this.branchesDataService.currentAnnualAverages.subscribe(averages => {
-      this.averages[0].value = this.calculateAverage(averages);
+      this.averages[0].value = this.calculateAverageBranches(averages);
+      this.averages[0].value = this.calculateAverage(averages); 
       this.updateAnnualAverage();
-    });
-
-    // S'abonne aux changements dans les notes pour les modules
     this.moduleDataService.currentModuleNotes.subscribe(notes => {
+      this.averages[1].value = this.calculateAverageModules(notes);
       this.averages[1].value = this.calculateAverage(notes);
       this.updateAnnualAverage();
-    });
-
-    // S'abonne aux changements dans les notes pour les modules CIE
     this.cieDataService.currentCieNotes.subscribe(notes => {
+      this.averages[2].value = this.calculateAverageCie(notes);
       this.averages[2].value = this.calculateAverage(notes);
       this.updateAnnualAverage();
+      });
     });
+    });
+  }
+
+  // Calcule la moyenne des notes inter-entreprise
+  private calculateAverageCie(notes: number[]): number {
+    if (notes.length === 0) return 0;
+    const sum = notes.reduce((acc, note) => acc + note, 0);
+    return parseFloat((sum / notes.length).toFixed(2));
+  }
+
+  // Calcule la moyenne des notes des modules
+  private calculateAverageModules(notes: number[]): number {
+    if (notes.length === 0) return 0;
+    const sum = notes.reduce((acc, note) => acc + note, 0);
+    return parseFloat((sum / notes.length).toFixed(2));
+  }
+
+  // Calcule la moyenne des branches scolaires
+  private calculateAverageBranches(averages: number[]): number {
+    if (averages.length > 0) {
+      const sum = averages.reduce((a, b) => a + b, 0);
+      const average = sum / averages.length;
+      return Number(average.toFixed(1)); 
+    }
+    return 0;
   }
 
   // Méthode pour calculer la moyenne de n'importe quel ensemble de valeurs
@@ -56,7 +79,9 @@ export class Notes1AverageTableComponent implements OnInit {
     if (validAverages.length > 0) {
       const sum = validAverages.reduce((a, b) => a + b, 0);
       this.averages[3].value = parseFloat((sum / validAverages.length).toFixed(1)); 
-    } else {
+    } 
+    else 
+    {
       this.averages[3].value = 0;
     }
   }

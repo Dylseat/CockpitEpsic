@@ -39,6 +39,7 @@ export class Notes3BranchesTableComponent {
 		{ branche: 'ECG', notesSemestre1: [null, null, null], notesSemestre2: [null, null, null] }
 	];
 
+	// Calcul de la moyenne annuelle pour une branche donnée
 	calculateAnnualAverage(grade: Grade) {
 		const sem1 = grade.moyenneSemestre1;
 		const sem2 = grade.moyenneSemestre2;
@@ -62,11 +63,13 @@ export class Notes3BranchesTableComponent {
 		this.updateAnnualAverages();
 	}
 
+	// Met à jour la moyenne annuelle en fonction des trois moyennes de catégorie
 	private updateAnnualAverages() {
 		const averages = this.dataSource.map(grade => grade.moyenneAnnuelle).filter(moy => moy !== null) as number[];
 		this.branchesData2Service.updateAnnualAverages(averages);
 	  }
 
+	// Calcul de la moyenne du semestre pour une branche donnée
 	calculateSemesterAverage(grade: Grade, semester: number) {
 		const notes = semester === 1 ? grade.notesSemestre1 : grade.notesSemestre2;
 		// Filtrer et s'assurer que les notes sont des nombres valides

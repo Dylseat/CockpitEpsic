@@ -27,6 +27,7 @@ export class PageHoraireComponent {
     });
   }
 
+  // Méthode pour imprimer l'horaire
   print() {
     const imageUrl = this.horaireImage.nativeElement.src;
     const printWindow = window.open('about:blank', '', 'height=600,width=800');
@@ -43,10 +44,7 @@ export class PageHoraireComponent {
                   printWindow.close();
               }, 100);
           }, 100); 
-      });
-
-        
-
+      }); 
     } 
     else 
     {

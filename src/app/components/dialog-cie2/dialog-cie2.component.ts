@@ -22,6 +22,7 @@ export class DialogCie2Component implements OnInit{
 
   constructor(@Inject(MAT_DIALOG_DATA) public data:any ,private dialogRef: MatDialogRef<DialogCie2Component>, private moduleService: ModuleService,) {}
 
+  // Récupérez les modules CIE de la base de données
   ngOnInit(): void {
     // Appelez la méthode du service pour récupérer les modules
     this.moduleService.getModulesCie2annes().subscribe(modules => {
@@ -35,6 +36,7 @@ export class DialogCie2Component implements OnInit{
     }
   }
 
+  // Méthode pour enregistrer la note associée au module sélectionné
   onSave(): void {
     // Vérifiez si un module est sélectionnés et si une note est saisie
     if (this.selectedModule && this.dataModule.moduleNote) 

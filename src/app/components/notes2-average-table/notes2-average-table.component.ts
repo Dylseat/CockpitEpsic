@@ -22,6 +22,7 @@ export class Notes2AverageTableComponent implements OnInit {
 
   constructor(private moduleDataService: ModuleData2Service, private branchesDataService: BranchesData2Service,private cieDataService: CieData2Service) {}
 
+  // Calcule la moyenne des notes annuelles en fonction des notes des branches, des modules et des modules inter-entreprise
   ngOnInit() {
     this.branchesDataService.currentAnnualAverages.subscribe(averages => {
       this.averages[0].value = this.calculateAverageBranches(averages);
@@ -40,18 +41,21 @@ export class Notes2AverageTableComponent implements OnInit {
     });
   }
 
+  // Calcule la moyenne des notes inter-entreprise
   private calculateAverageCie(notes: number[]): number {
     if (notes.length === 0) return 0;
     const sum = notes.reduce((acc, note) => acc + note, 0);
     return parseFloat((sum / notes.length).toFixed(2));
   }
 
+  // Calcule la moyenne des notes des modules
   private calculateAverageModules(notes: number[]): number {
     if (notes.length === 0) return 0;
     const sum = notes.reduce((acc, note) => acc + note, 0);
     return parseFloat((sum / notes.length).toFixed(2));
   }
 
+  // Calcule la moyenne des branches scolaires
   private calculateAverageBranches(averages: number[]): number {
     if (averages.length > 0) {
       const sum = averages.reduce((a, b) => a + b, 0);
@@ -61,18 +65,22 @@ export class Notes2AverageTableComponent implements OnInit {
     return 0;
   }
 
+  // Calcule la moyenne de l'année
   private calculateAverage(values: number[]): number {
     if (values.length === 0) return 0;
     const sum = values.reduce((acc, value) => acc + value, 0);
     return parseFloat((sum / values.length).toFixed(2));
   }
   
+  // Met à jour la moyenne annuelle
   private updateAnnualAverage(): void {
     const validAverages = this.averages.slice(0, 3).map(a => a.value).filter(v => v > 0);
     if (validAverages.length > 0) {
       const sum = validAverages.reduce((a, b) => a + b, 0);
       this.averages[3].value = parseFloat((sum / validAverages.length).toFixed(1));  // Arrondi à une décimale
-    } else {
+    } 
+    else 
+    {
       this.averages[3].value = 0;
     }
   }

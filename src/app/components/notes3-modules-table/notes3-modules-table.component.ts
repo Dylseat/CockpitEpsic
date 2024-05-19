@@ -19,6 +19,7 @@ export class Notes3ModulesTableComponent {
   displayedColumns: string[] = ['moduleNumber', 'moduleTitle', 'moduleNote', 'delete'];
   dataSource: { moduleNumber: ''; moduleTitle: ''; moduleNote: ''; }[] = [];
 
+  // Ouvre une boîte de dialogue pour ajouter un module
   openDialog(): void {
     const dialogRef = this.dialog.open(Dialog3Component, {
       data: { moduleNumber: '', moduleTitle: '', moduleNote: '' }
@@ -35,6 +36,7 @@ export class Notes3ModulesTableComponent {
     });
   }
 
+  // Supprime une ligne du tableau
   deleteRow(element: any): void {
     const index = this.dataSource.indexOf(element);
     if (index >= 0) {
@@ -44,6 +46,7 @@ export class Notes3ModulesTableComponent {
     }
   }
 
+  // Met à jour les notes dans le service en convertissant les valeurs en nombre
   private updateModuleNotes(): void {
     // Convertir chaque moduleNote en nombre avant de passer au service
     const notes = this.dataSource.map(module => Number(module.moduleNote));

@@ -16,14 +16,12 @@ import { Router } from '@angular/router';
 import { AuthService } from '../../../auth.service';
 import { CommonModule } from '@angular/common';
 
-
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
     const isSubmitted = form && form.submitted;
     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
   }
 }
-
 
 @Component({
   selector: 'app-login-page',
@@ -38,6 +36,7 @@ export class LoginPageComponent {
 
   constructor(private authService: AuthService, private router: Router) {}
 
+  // Méthode pour gérer la validation des champs de saisie
   onLogin(): void {
     if (this.emailFormControl.valid && this.passwordFormControl.valid) {
       const email = this.emailFormControl.value || ''; 

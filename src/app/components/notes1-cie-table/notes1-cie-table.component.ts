@@ -20,6 +20,7 @@ export class Notes1CieTableComponent {
   displayedColumns: string[] = ['moduleNumber', 'moduleTitle', 'moduleNote', 'delete'];
   dataSource: { moduleNumber: ''; moduleTitle: ''; moduleNote: ''; }[] = [];
 
+  // Ouvre une boîte de dialogue pour ajouter un module
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogCieComponent, {
       data: { moduleNumber: '', moduleTitle: '', moduleNote: '' }
@@ -35,9 +36,11 @@ export class Notes1CieTableComponent {
     });
   }
 
+  // Supprime une ligne du tableau
   deleteRow(element: any): void {
     const index = this.dataSource.indexOf(element);
-    if (index >= 0) {
+    if (index >= 0) 
+    {
       this.dataSource.splice(index, 1);
       this.dataSource = [...this.dataSource];
       this.updateCieNotes();
