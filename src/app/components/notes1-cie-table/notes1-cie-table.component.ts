@@ -44,8 +44,9 @@ export class Notes1CieTableComponent {
     }
   }
 
+  // Met à jour les notes dans le service en convertissant les valeurs en nombre
   private updateCieNotes(): void {
     const notes = this.dataSource.map(module => Number(module.moduleNote));
-    this.cieDataService.updateCieNotes(notes);
+    this.cieDataService.updateCieNotes(notes); // Envoie les notes mises à jour au service
   }
 }
